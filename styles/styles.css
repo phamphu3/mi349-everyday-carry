@@ -1,0 +1,167 @@
+:root {
+  --bg: #f6f1e9;
+  --bg-alt: #e4d4c4;
+  --card-bg: #ffffff;
+  --text-main: #2f2a24;
+  --accent: #b78a5b;
+  --accent-soft: #f1d7b5;
+}
+
+/* 1. Global body */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacOSFont, "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* 2. Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 3. Layout containers */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 4. Header */
+.site-header {
+  background-color: var(--bg-alt);
+  border-bottom: 1px solid #d1c2af;
+  padding: 0.75rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title a {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* 5. Nav */
+.site-nav a {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+/* 6. Main area */
+.site-main {
+  padding: 2.5rem 0;
+}
+
+/* 7. Intro section */
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* 8. Grid of items */
+.things-grid,
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+/* 9. Item card */
+.item-card {
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-align: left;
+}
+
+/* 10. Card hover */
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* 11. Card image */
+.item-card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 0.75rem;
+  object-fit: cover;
+}
+
+/* 12. Card title */
+.item-card__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+/* 13. Card text */
+.item-card__text {
+  font-size: 0.95rem;
+  color: #4a4039;
+}
+
+/* 14. Card link */
+.item-card__link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  background: var(--accent-soft);
+  color: var(--text-main);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* 15. Footer */
+.site-footer {
+  background-color: var(--bg-alt);
+  border-top: 1px solid #d1c2af;
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+  margin-top: 2.5rem;
+}
+
+/* 16. Make sure all img tags are responsive (fallback) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 17. Mobile tweaks */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .intro {
+    margin-bottom: 1.5rem;
+  }
+
+  h1, .site-title {
+    font-size: 1.25rem;
+  }
+}

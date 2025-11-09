@@ -1,7 +1,24 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: Everyday Carry
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<section class="intro">
+  <h2>Three Things I Never Leave Home Without</h2>
+  <p>
+    These are the small things that live in my bag every single day. Each one
+    carries a bit of comfort, routine, and personality.
+  </p>
+</section>
+
+<section class="things-grid">
+  {%- comment -%}
+  Loop through the "thing" collection and render each item using the
+  itemCard shortcode. Use item.data.title, item.data.image,
+  item.data.summary, and item.url.
+  {%- endcomment -%}
+  {% for item in collections.thing %}
+    {% itemCard item.data.title item.data.image item.data.summary item.url %}
+  {% endfor %}
+</section>
+
